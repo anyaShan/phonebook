@@ -11,8 +11,21 @@ export const ImgPhone = styled.img`
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
-  width: 120px;
+  width: 200px;
   /* margin-top: 100px;
   margin-bottom: 15px;
   text-align: center; */
+  color: gray;
+  /* fill: red; */
+`;
+
+export const PngPhone = styled.svg`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  width: 100px;
+  width: 100px;
+
+  fill: rgb(241, 188, 90);
 `;
