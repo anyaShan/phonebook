@@ -6,9 +6,9 @@ export const Container = styled.div`
 
   display: flex;
   /* flex-wrap: wrap; */
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   gap: 25px;
 
   font-size: 40;

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const AppWrap = styled.header`
-  top: 0;
-  left: 0;
-  position: sticky;
+  /* top: 0; */
+  /* left: 0; */
+  /* position: sticky; */
   z-index: 1100;
   display: flex;
   justify-content: space-between;
