@@ -1,3 +1,4 @@
+import { JackInTheBox } from 'react-awesome-reveal';
 import { MainContainer } from 'components/MainContainer/MainContainer';
 
 import { Title, ImgPhone } from './Home.styled';
@@ -7,7 +8,9 @@ const Home = () => {
   return (
     <MainContainer>
       <Title>Welcome to your phone book!</Title>
-      <ImgPhone src={srcImg} alt="phone" />
+      <JackInTheBox duration="1500">
+        <ImgPhone src={srcImg} alt="phone" />
+      </JackInTheBox>
     </MainContainer>
   );
 };
