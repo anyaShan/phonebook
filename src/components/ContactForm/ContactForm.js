@@ -6,9 +6,26 @@ import { selectContacts } from 'redux/selectors';
 import * as yup from 'yup';
 import { FormWrap, FieldWrap } from './ContactForm.styled';
 
-let schema = yup.object().shape({
-  name: yup.string().required(),
-  number: yup.number().required(),
+const regExpName = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+
+const regExpNumber =
+  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+
+const schema = yup.object().shape({
+  name: yup
+    .string()
+    .matches(
+      regExpName,
+      "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+    )
+    .required(),
+  number: yup
+    .string()
+    .matches(
+      regExpNumber,
+      'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+    )
+    .required(),
 });
 
 export const ContactForm = () => {
@@ -42,9 +59,9 @@ export const ContactForm = () => {
           <FieldWrap
             type="text"
             name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+            // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            // required
             placeholder="Rosie Simpson"
             id={nameInputId}
           />
@@ -53,9 +70,9 @@ export const ContactForm = () => {
           <FieldWrap
             type="tel"
             name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
+            // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            // required
             placeholder="459-12-56"
             id={numberInputId}
           />
