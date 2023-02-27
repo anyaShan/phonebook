@@ -19,7 +19,7 @@ export const ImgPhone = styled.img`
   /* fill: red; */
 `;
 
-export const PngPhone = styled.svg`
+export const SvgPhone = styled.svg`
   display: block;
   margin-left: auto;
   margin-right: auto;
